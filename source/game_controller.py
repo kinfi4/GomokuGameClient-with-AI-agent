@@ -1,5 +1,3 @@
-import math
-
 import pygame as pg
 
 from const import CheckerType, SCREEN_SIZE, Color, FPS
@@ -10,11 +8,11 @@ pg.init()
 
 
 class Gomoku:
-    def __init__(self):
+    def __init__(self, difficulty):
         self.screen = pg.display.set_mode(SCREEN_SIZE)
         self.clock = pg.time.Clock()
         self.board = Board(screen=self.screen)
-        self.agent = Agent()
+        self.agent = Agent(difficulty=difficulty)
         self.game_is_over = False
 
         self.screen.fill(Color.YELLOW)

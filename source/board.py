@@ -83,6 +83,7 @@ class Board:
             white_points += w_p
             black_points += b_p
 
+        # print(f'Board, {self.board} evaluation = {white_points + black_points}')
         return white_points + black_points
 
     def redraw_board(self):
@@ -141,36 +142,36 @@ class Board:
         w, b, e = CheckerType.WHITE, CheckerType.BLACK, CheckerType.EMPTY
         if ''.join([w, w, w, w, w]) in string:
             white_points = 100000000000
-        elif ''.join([e, w, w, w, w, e]):
+        elif ''.join([e, w, w, w, w, e]) in string:
             white_points = 100000000000 - 1
-        elif ''.join([e, w, w, w, e]):
+        elif ''.join([e, w, w, w, e]) in string:
             white_points = 100000
-        elif ''.join([e, w, w, w]):
+        elif ''.join([e, w, w, w]) in string:
             white_points = 400
-        elif ''.join([w, w, w, e]):
+        elif ''.join([w, w, w, e]) in string:
             white_points = 400
-        elif ''.join([e, w, w, e]):
+        elif ''.join([e, w, w, e]) in string:
             white_points = 50
-        elif ''.join([w, w, e]):
+        elif ''.join([w, w, e]) in string:
             white_points = 20
-        elif ''.join([e, w, w]):
+        elif ''.join([e, w, w]) in string:
             white_points = 20
 
         if ''.join([b, b, b, b, b]) in string:
             black_points = -100000000
-        elif ''.join([e, b, b, b, b, e]):
+        elif ''.join([e, b, b, b, b, e]) in string:
             black_points = -100000000 + 1
-        elif ''.join([e, b, b, b, e]):
+        elif ''.join([e, b, b, b, e]) in string:
             black_points = -10000
-        elif ''.join([e, b, b, b]):
+        elif ''.join([e, b, b, b]) in string:
             black_points = -800
-        elif ''.join([b, b, b, e]):
+        elif ''.join([b, b, b, e]) in string:
             black_points = -800
-        elif ''.join([e, b, b, e]):
+        elif ''.join([e, b, b, e]) in string:
             black_points = -100
-        elif ''.join([b, b, e]):
+        elif ''.join([b, b, e]) in string:
             black_points = -50
-        elif ''.join([e, b, b]):
+        elif ''.join([e, b, b]) in string:
             black_points = -50
 
         return white_points, black_points
