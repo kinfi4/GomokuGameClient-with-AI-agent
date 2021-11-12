@@ -6,9 +6,9 @@ from board import Board
 
 class Agent:
     difficulties_to_depth = {
-        'low': 2,
-        'medium': 3,
-        'hard': 4
+        'Low': 2,
+        'Medium': 3,
+        'Hard': 4
     }
 
     def __init__(self, difficulty='hard'):

@@ -4,12 +4,10 @@ from const import CheckerType, SCREEN_SIZE, Color, FPS
 from board import Board
 from agent import Agent
 
-pg.init()
-
 
 class Gomoku:
-    def __init__(self, difficulty):
-        self.screen = pg.display.set_mode(SCREEN_SIZE)
+    def __init__(self, difficulty, screen: pg.Surface):
+        self.screen = screen
         self.clock = pg.time.Clock()
         self.board = Board(screen=self.screen)
         self.agent = Agent(difficulty=difficulty)
