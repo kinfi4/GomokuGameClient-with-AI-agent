@@ -58,16 +58,12 @@ class Agent:
             return min_eval, best_board
 
     def get_all_possible_children_boards(self, board, color_making_move):
-        boards = []
-
         for y in range(BOARD_SIZE):
             for x in range(BOARD_SIZE):
                 if board.board[y][x] == CheckerType.EMPTY and self.checker_has_a_neighbor(board.board, (x, y)):
                     board_copy = deepcopy(board)
                     board_copy.board[y][x] = color_making_move
-                    boards.append(board_copy)
-
-        return boards
+                    yield board_copy
 
     @staticmethod
     def checker_has_a_neighbor(board, checker_pos):

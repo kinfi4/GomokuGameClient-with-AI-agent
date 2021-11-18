@@ -1,5 +1,5 @@
-import pygame as pg
 import pygame_menu
+import pygame as pg
 
 from game_controller import Gomoku
 from const import SCREEN_SIZE
@@ -28,6 +28,6 @@ def start_the_game():
 
 if __name__ == '__main__':
     screen = pg.display.set_mode(SCREEN_SIZE)
-    difficulty = None
+    difficulty = 'Hard'
 
     start_menu()

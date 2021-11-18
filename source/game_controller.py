@@ -22,15 +22,16 @@ class Gomoku:
     def main_loop(self):
         self.board.draw_board()
 
-        while not self.game_is_over:
+        while True:
             for event in pg.event.get():
                 if event.type == pg.QUIT:
                     exit()
 
-            self._check_user_input()
+            if not self.game_is_over:
+                self._check_user_input()
 
-            pg.display.update()
-            self.clock.tick(FPS)
+                pg.display.update()
+                self.clock.tick(FPS)
 
     def _check_user_input(self):
         if pg.mouse.get_pressed(3)[0]:
@@ -71,4 +72,3 @@ class Gomoku:
         self.screen.blit(game_over_text, pos_game_over)
         self.screen.blit(winning_text, pos_winner_text)
         pg.display.update()
-        input()

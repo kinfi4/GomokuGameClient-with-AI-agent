@@ -40,4 +40,3 @@ class Renderer:
 
         pg.draw.circle(self.screen, checker_color, center=(pos_x, pos_y), radius=26)
         pg.draw.circle(self.screen, checker_second_color, center=(pos_x + 10, pos_y + 4), radius=8)
-
